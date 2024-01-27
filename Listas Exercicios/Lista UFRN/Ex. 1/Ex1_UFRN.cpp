@@ -1,8 +1,33 @@
 #include <iostream>
 using namespace std;
 
-int main() 
+class NumberProcessor
 {
+public:
+    int GetSumOfNumbers(int countNumber)
+    {
+        int numbersSum = 0;
+        for (size_t i = 0; i < countNumber + 1; i++)
+        {
+            numbersSum += i;
+        }
+
+        return numbersSum;
+    }
+};
+
+int main()
+{
+    NumberProcessor numberProcessor;
+
     cout << "--------------- Exercicio 1 - UFRN ---------------" << endl;
+
+    int desiredNumber;
+
+    cout << "Input desired number:" << endl;
+    cin >> desiredNumber;
+    int sumOf100 = numberProcessor.GetSumOfNumbers(desiredNumber);
+    cout << "Sum of " << desiredNumber << " is " << sumOf100 << endl;
+
     return 0;
 }
